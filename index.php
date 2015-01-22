@@ -30,7 +30,7 @@
 		<script type="text/javascript" src="js/entities/entities.js"></script> <!-- calls the js entities file -->
 		<script type="text/javascript" src="js/entities/HUD.js"></script> <!-- calls the HUD js file -->
 
-		<script type="text/javascript" src="js/screens/title.js"></script>
+		<script type="text/javascript" src="js/screens/title.js"></script> <!-- calls the js title file -->
 		<script type="text/javascript" src="js/screens/play.js"></script>
 		<!-- /build -->
 		<!-- Bootstrap & Mobile optimization tricks -->

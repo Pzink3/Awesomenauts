@@ -25,10 +25,11 @@ var game = {
 	}
 
 	// Initialize the audio.
-	me.audio.init("mp3,ogg");
-
+	me.audio.init(".mp3", ".ogg"); // intializes the mp3 and ogg files
+         
 	// Set a callback to run when loading is complete.
 	me.loader.onload = this.loaded.bind(this);
+
 
 	// Load the resources.
 	me.loader.preload(game.resources);
@@ -39,13 +40,14 @@ var game = {
 
 	// Run on game resources loaded.
 	"loaded" : function () {
-            me.pool.register("player", game.PlayerEntity, true);
-            me.pool.register("PlayerBase", game.PlayerBaseEntity);
-            me.pool.register("EnemyBase", game.EnemyBaseEntity);
-		me.state.set(me.state.MENU, new game.TitleScreen());
-		me.state.set(me.state.PLAY, new game.PlayScreen());
+            me.pool.register("player", game.PlayerEntity, true); // runs the player
+            me.pool.register("PlayerBase", game.PlayerBaseEntity); // runs the player base
+            me.pool.register("EnemyBase", game.EnemyBaseEntity); // runs the enemy base
+		me.state.set(me.state.MENU, new game.TitleScreen()); // sets the menu
+		me.state.set(me.state.PLAY, new game.PlayScreen()); // sets gameplay
 
 		// Start the game.
-		me.state.change(me.state.PLAY);
+		me.state.change(me.state.PLAY); // starts game
+               
 	}
 };
