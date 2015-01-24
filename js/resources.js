@@ -24,7 +24,7 @@ game.resources = [
 	 * @example
 	 * {name: "example_bgm", type: "audio", src: "data/bgm/"},
 	 */	
-      // {name: "The Incredits", type: "audio", src: "data/bgm/The Incredits (From the Incredibles).mp3"},
+        //  {name: "The Incredits", type: "audio", src: "data/bgm/The Incredits (From the Incredibles).mp3"}
 	/* Sound effects. 
 	 * @example
 	 * {name: "example_sfx", type: "audio", src: "data/sfx/"}

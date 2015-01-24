@@ -8,6 +8,7 @@ game.PlayScreen = me.ScreenObject.extend({
 
 
                 me.levelDirector.loadLevel("level01"); // calls the level director to load level
+               
        
                 
                 var player = me.pool.pull("player", 0, 420, {});
