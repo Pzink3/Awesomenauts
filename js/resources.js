@@ -3,12 +3,15 @@ game.resources = [
 	/* Graphics. 
 	 * @example
 	 * {name: "example", type:"image", src: "data/img/example.png"},
+
 	 */
            {name: "background-tiles", type:"image", src: "data/img/background-tiles.png"}, // loads the background tiles.
            {name: "meta-tiles", type:"image", src: "data/img/meta-tiles.png"}, // loads the meta-tiles.
            {name: "player", type:"image", src: "data/img/orcSpear.png"},// loads the orcSpear player.
            {name: "tower", type:"image", src: "data/img/tower_round.svg.png"},
            {name: "creep1", type:"image", src: "data/img/brainmonster.png"},
+           {name: "title-screen", type:"image", src: "data/img/title.png"},
+
 	/* Atlases 
 	 * @example
 	 * {name: "example_tps", type: "tps", src: "data/img/example_tps.json"},
@@ -24,7 +27,8 @@ game.resources = [
 	 * @example
 	 * {name: "example_bgm", type: "audio", src: "data/bgm/"},
 	 */	
-        //  {name: "The Incredits", type: "audio", src: "data/bgm/The Incredits (From the Incredibles).mp3"}
+       // {name: "The_Incredits", type: "audio", src: "data/bgm/The Incredits (From the Incredibles).mp3"},
+          
 	/* Sound effects. 
 	 * @example
 	 * {name: "example_sfx", type: "audio", src: "data/sfx/"}

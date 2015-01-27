@@ -8,7 +8,7 @@ game.PlayScreen = me.ScreenObject.extend({
 
 
                 me.levelDirector.loadLevel("level01"); // calls the level director to load level
-               
+                
        
                 
                 var player = me.pool.pull("player", 0, 420, {});
@@ -16,12 +16,11 @@ game.PlayScreen = me.ScreenObject.extend({
                 
                 var gamemanager = me.pool.pull("GameManager", 0, 0, {});
                 me.game.world.addChild(gamemanager, 0);
-                
-                me.input.bindKey(me.input.KEY.RIGHT, "right");
-                me.input.bindKey(me.input.KEY.LEFT, "left");
-                me.input.bindKey(me.input.KEY.SPACE, "jump");
-                me.input.bindKey(me.input.KEY.UP, "jump");
-                me.input.bindKey(me.input.KEY.A, "attack");
+                me.input.bindKey(me.input.KEY.RIGHT, "right"); // binds the right key to make the player go right
+                me.input.bindKey(me.input.KEY.LEFT, "left"); // binds the left key to make the player go left
+                me.input.bindKey(me.input.KEY.SPACE, "jump"); // binds the space key to make the player jump
+                me.input.bindKey(me.input.KEY.UP, "jump"); // binds the up key to also make the player jump
+                me.input.bindKey(me.input.KEY.A, "attack"); // binds the a key to make the player attack
 		// add our HUD to the game world
 		this.HUD = new game.HUD.Container();
 		me.game.world.addChild(this.HUD);
