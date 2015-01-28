@@ -14,7 +14,7 @@ game.PlayerEntity = me.Entity.extend({
    
    this.type = "PlayerEntity";
    this.health = game.data.playerHealth;
-   this.body.setVelocity(5, 20);
+   this.body.setVelocity(game.data.playerMoveSpeed, 5, 20);
    this.facing = "right"; // faces player to the right
    this.now = new Date().getTime;
    this.lastHit = this.now;
@@ -104,6 +104,7 @@ game.PlayerEntity = me.Entity.extend({
                this.body.vel.x = 0;
             //   this.pos.x = this.pos.x +1;
            }
+           
        }
    }
 });
