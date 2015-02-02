@@ -11,7 +11,7 @@ game.resources = [
            { name: "tower", type:"image", src: "data/img/tower_round.svg.png" },
            { name: "creep1", type:"image", src: "data/img/brainmonster.png" },
            { name: "title-screen", type:"image", src: "data/img/title.png" },
-           { name: "Incredibles", type:"image", src: "data/img/IncrediblesLogo.png" },
+   
 
 	/* Atlases 
 	 * @example
@@ -23,12 +23,12 @@ game.resources = [
 	 * {name: "example01", type: "tmx", src: "data/map/example01.tmx"},
 	 * {name: "example01", type: "tmx", src: "data/map/example01.json"},
  	 */
-           {name: "level01", type: "tmx", src: "data/map/test.tmx"}, // loads my test level.
+           {name: "level01", type: "tmx", src: "data/map/test.tmx"} // loads my test level.
 	/* Background music. 
 	 * @example
 	 * {name: "example_bgm", type: "audio", src: "data/bgm/"},
 	 */	
-       // {name: "The_Incredits", type: "audio", src: "data/bgm/The Incredits (From the Incredibles).mp3"},
+
           
 	/* Sound effects. 
 	 * @example
