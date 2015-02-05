@@ -17,6 +17,8 @@ game.PlayerEntity = me.Entity.extend({
    this.body.setVelocity(game.data.playerMoveSpeed, 5, 20);
    this.facing = "right"; // faces player to the right
    this.now = new Date().getTime;
+   this.dead = false;
+   this.attack = game.data.playerAttack;
    this.lastHit = this.now;
    this.lastAttack = new Date().getTime;
    me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
@@ -220,7 +222,15 @@ game.EnemyCreep = me.Entity.extend({
     this.renderable.addAnimation("walk", [3, 4, 5], 80);
     this.renderable.setCurrentAnimation("walk");
     },
+    
+    loseHealth: function(damage) {
+      this.health = this.health - damage;
+    },
     update: function(delta){       
+        console.log(this.health);
+        if(this.health <= 0){
+            me.game.world.removeChild(this);
+        }
        this.now = new Date().getTime();
         
        this.body.vel.x -=  this.body.accel.x * me.timer.tick;
@@ -273,10 +283,15 @@ game.GameManager = Object.extend({
     update: function(){
         this.now = new Date().getTime();
         
+        if(game.data.player.dead){
+            me.game.world.removeChild(game.data.player);
+            me.state.current().resetPlayer(10, 0);
+        }
+        
         if(Math.round(this.now/1000)%10 ===0 && (this.now - this.lastCreep >= 1000)){
             this.lastCreep = this.now;
-            var creep = me.pool.pull("EnemyCreep", 1000, 0, {});
-            me.game.world.addChild(creep, 5);
+            var creepe = me.pool.pull("EnemyCreep", 1000, 0, {});
+            me.game.world.addChild(creepe, 5);
             
         }
         return true;
