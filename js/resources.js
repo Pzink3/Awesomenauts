@@ -24,12 +24,12 @@ game.resources = [
 	 * {name: "example01", type: "tmx", src: "data/map/example01.tmx"},
 	 * {name: "example01", type: "tmx", src: "data/map/example01.json"},
  	 */
-           {name: "level01", type: "tmx", src: "data/map/test.tmx"} // loads my test level.
+           {name: "level01", type: "tmx", src: "data/map/test.tmx"}, // loads my test level.
 	/* Background music. 
 	 * @example
 	 * {name: "example_bgm", type: "audio", src: "data/bgm/"},
 	 */	
-           
+           { name: "the-incredits", type: "audio", src: "data/bgm/" }
           
 	/* Sound effects. 
 	 * @example

@@ -8,6 +8,7 @@ game.PlayScreen = me.ScreenObject.extend({
 
                 
                 me.levelDirector.loadLevel("level01"); // calls the level director to load level
+                me.audio.playTrack("the-incredits");
                 
                 this.resetPlayer(0, 420);
                 
