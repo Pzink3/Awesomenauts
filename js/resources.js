@@ -29,7 +29,7 @@ game.resources = [
 	 * @example
 	 * {name: "example_bgm", type: "audio", src: "data/bgm/"},
 	 */	
-           { name: "the-incredits", type: "audio", src: "data/bgm/" }
+           { name: "the-glory-days", type: "audio", src: "data/bgm/" }
           
 	/* Sound effects. 
 	 * @example
