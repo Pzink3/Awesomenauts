@@ -8,10 +8,10 @@ game.resources = [
            { name: "background-tiles", type:"image", src: "data/img/background-tiles.png" }, // loads the background tiles.
            { name: "meta-tiles", type:"image", src: "data/img/meta-tiles.png" }, // loads the meta-tiles.
            { name: "player", type:"image", src: "data/img/orcSpear.png" },// loads the orcSpear player.
-           { name: "tower", type:"image", src: "data/img/tower_round.svg.png" },
-           { name: "creep1", type:"image", src: "data/img/brainmonster.png" },
-           { name: "title-screen", type:"image", src: "data/img/title.png" },
-           { name: "32x32_font", type:"image", src: "data/img/32x32_font.png" },
+           { name: "tower", type:"image", src: "data/img/tower_round.svg.png" }, // loads the tower.
+           { name: "creep1", type:"image", src: "data/img/brainmonster.png" }, // loads the brain monster creep.
+           { name: "title-screen", type:"image", src: "data/img/title.png" }, // loads the title screen image.
+ 
    
 
 	/* Atlases 
