@@ -99,14 +99,31 @@ game.PlayerEntity = me.Entity.extend({
                this.body.falling = false;
                this.body.vel.y = -1;
            }
-         if(xdif>-35 && this.facing==='right' && (xdif<0)){
+        else if(xdif>-35 && this.facing==='right' && (xdif<0)){
                this.body.vel.x = 0;
                //this.pos.x = this.pos.x -1;
            }else if(xdif<70 && this.facing==='left' && xdif>0){
                this.body.vel.x = 0;
             //   this.pos.x = this.pos.x +1;
            }
+           if(this.renderable.isCurrentAnimation("attack") && this.now-this.lastHit >= 400) {
+               console.log("tower Hit");
+               this.lastHit = this.now;
+              if(response.b.loseHealth(game.data.playerAttack)){
+                  game.data.gold += 1;
+                  console.log("Current gold: " + game.data.gold);
+              }
            
+           }
+   }else if(response.b.type==="EnemyCreep"){
+          var xdif = this.pos.y - response.b.pos.x;
+          var ydif = this.pos.x - response.b.pos.y;
+          
+          if(xdif>0){
+              if(this.facing==="left"){
+                  this.body.vel.x = 0;
+              }
+          }
        }
    }
 });
