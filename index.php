@@ -5,7 +5,7 @@
               body {
 
               }
-              @font-face { font-family: Incredibles; src: url('Incredibles.ttf'); } 
+              @font-face { font-family: Incredibles; src: url('incredibles.ttf'); } 
               sub {
               font-family: Incredibles;
               }
