@@ -38,7 +38,7 @@ game.TitleScreen = me.ScreenObject.extend({
 	 */
 	onDestroyEvent: function(){
           me.input.unbindKey(me.input.KEY.ENTER);
-          me.audio.stopTrack("the-glory-days");
+          me.audio.stop("the-glory-days");
           me.event.unsubscribe(this.handler);
         }
 });
