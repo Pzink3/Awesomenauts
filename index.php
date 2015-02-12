@@ -73,7 +73,7 @@
 			});
 		</script>
         <center>
-                <sub><font color='white'>Copyright 2015 Parker Zink Productions. All Rights Reserved.</font></sub>
+                <sub><font color='white'>&copy 2015 Parker Zink Productions. All Rights Reserved.</font></sub>
         </center>
 	</body>
 </html>
