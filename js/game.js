@@ -63,11 +63,11 @@ var game = {
 
 	// Run on game resources loaded.
 	"loaded" : function () {
-            me.pool.register("player", game.PlayerEntity, true); // runs the player
-            me.pool.register("PlayerBase", game.PlayerBaseEntity); // runs the player base
-            me.pool.register("EnemyBase", game.EnemyBaseEntity); // runs the enemy base
-            me.pool.register("EnemyCreep", game.EnemyCreep, true); // runs the enemy creep
-            me.pool.register("GameManager", game.GameManager); // runs the game manager
+                me.pool.register("player", game.PlayerEntity, true); // runs the player
+                me.pool.register("PlayerBase", game.PlayerBaseEntity); // runs the player base
+                me.pool.register("EnemyBase", game.EnemyBaseEntity); // runs the enemy base
+                me.pool.register("EnemyCreep", game.EnemyCreep, true); // runs the enemy creep
+                me.pool.register("GameManager", game.GameManager); // runs the game manager
 		me.state.set(me.state.MENU, new game.TitleScreen()); // sets the menu
 		me.state.set(me.state.PLAY, new game.PlayScreen()); // sets gameplay
 

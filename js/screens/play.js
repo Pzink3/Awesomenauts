@@ -8,9 +8,9 @@ game.PlayScreen = me.ScreenObject.extend({
 
                 
                 me.levelDirector.loadLevel("level01"); // calls the level director to load level
-                me.audio.playTrack("the-incredits");
+                me.audio.playTrack("the-incredits"); // plays the song, "The Incredits"
                 
-                this.resetPlayer(0, 420);
+                this.resetPlayer(0, 420); // resets player
                 
                 var player = me.pool.pull("player", 0, 420, {}); // pulls the player
                 me.game.world.addChild(player, 5); // adds the player
@@ -22,6 +22,7 @@ game.PlayScreen = me.ScreenObject.extend({
                 me.input.bindKey(me.input.KEY.SPACE, "jump"); // binds the space key to make the player jump
                 me.input.bindKey(me.input.KEY.UP, "jump"); // binds the up key to also make the player jump
                 me.input.bindKey(me.input.KEY.A, "attack"); // binds the a key to make the player attack
+                
 		// add our HUD to the game world
 		this.HUD = new game.HUD.Container();
 		me.game.world.addChild(this.HUD); // adds HUD
