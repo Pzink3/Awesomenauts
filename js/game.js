@@ -6,20 +6,20 @@ var game = {
 	data : {
 		// score
 		score : 0, 
-                enemyBaseHealth: 10,
-                playerBaseHealth: 10,
-                enemyCreepHealth: 10,
-                playerHealth: 10,
-                enemyCreepAttack: 1,
-                playerAttack: 1,
+                enemyBaseHealth: 10, // sets the enemy base's health to 10 lives
+                playerBaseHealth: 10, // sets the playyer base's health to 10 lives
+                enemyCreepHealth: 10, // sets the enemy creep's health to 10 lives
+                playerHealth: 10, // sets the player's health to 10 lives
+                enemyCreepAttack: 1, // sets the enemy creep to make one attack
+                playerAttack: 1, // sets the player to make one attack
     //            orcBaseDamage: 10,
     //            orcBaseHealth: 100,
     //            orcBaseSpeed: 3,
     //            orcBaseDefense: 0,
-                playerAttackTimer: 1000,
-                creepAttackTimer: 1000,
-                playerMoveSpeed: 5,
-                creepMoveSpeed: 5,
+                playerAttackTimer: 1000, // sets the player's attack timer to 1000
+                creepAttackTimer: 1000, // sets the creep's attack timer to 1000
+                playerMoveSpeed: 5, // sets the player's speed to 5
+                creepMoveSpeed: 5, // sets the creep's speed to 5
                 gameManager: "",
                 player: "",
 	},
@@ -45,7 +45,7 @@ var game = {
       
          
 	// Set a callback to run when loading is complete.
-	me.loader.onload = this.loaded.bind(this);
+	me.loader.onload = this.loaded.bind(this); // loads the binding callback
 
 
 	// Load the resources.
@@ -57,13 +57,13 @@ var game = {
 
 	// Run on game resources loaded.
 	"loaded" : function () {
-                me.pool.register("player", game.PlayerEntity, true); // runs the player
+                me.pool.register("player", game.PlayerEntity, true); // runs the player entity
                 me.pool.register("PlayerBase", game.PlayerBaseEntity); // runs the player base
                 me.pool.register("EnemyBase", game.EnemyBaseEntity); // runs the enemy base
                 me.pool.register("EnemyCreep", game.EnemyCreep, true); // runs the enemy creep
                 me.pool.register("GameManager", game.GameManager); // runs the game manager
-		me.state.set(me.state.MENU, new game.TitleScreen); // sets the menu
-		me.state.set(me.state.PLAY, new game.PlayScreen); // sets gameplay
+		me.state.set(me.state.MENU, new game.TitleScreen); // sets the menu state
+		me.state.set(me.state.PLAY, new game.PlayScreen); // sets play state
 
 		// Start the game.
 		me.state.change(me.state.MENU); // starts game

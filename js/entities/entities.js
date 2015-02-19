@@ -13,7 +13,7 @@ game.PlayerEntity = me.Entity.extend({
             }]);
            
    me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
-   this.addAnimation();
+   this.addAnimation(); // adds the player entity's animation
 
    this.now = new Date().getTime;
 

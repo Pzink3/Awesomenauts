@@ -10,7 +10,7 @@ game.PlayerBaseEntity = me.Entity.extend({
                 return (new me.Rect(0, 0, 100, 70).toPolygon)();
             }
             }]);
-        this.broken = false;
+        this.broken = false; // tells the player base entity to not break
         this.health = 10; // sets the health to 10
         this.alwaysUpdate = true;
         this.body.onCollision = this.onCollision.bind(this);      

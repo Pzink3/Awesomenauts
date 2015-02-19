@@ -13,7 +13,7 @@ game.EnemyCreep = me.Entity.extend({
     this.health = 10; // gives the enemy creep only 10 lives.
     this.alwaysUpdate = true;
     //this.attacking lets us know if the enemy is currently attacking
-    this.attacking = false;
+    this.attacking = false; // tells the enemy creep to not attack
     //keeps track of when my creep last attacked anything
     this.lastAttacking = new Date().getTime();
     // keeps track of the last time my creep hit anything

@@ -10,7 +10,7 @@ game.EnemyBaseEntity = me.Entity.extend({
                 return (new me.Rect(0, 0, 100, 70).toPolygon)();
             }
             }]);
-        this.broken = false;
+        this.broken = false; // tells the enemy base to not break
         this.health = 10; // gives the enemy base entity 10 lives.
         this.alwaysUpdate = true;
         this.body.onCollision = this.onCollision.bind(this);

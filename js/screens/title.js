@@ -24,7 +24,7 @@ game.TitleScreen = me.ScreenObject.extend({
                     this.handler = me.event.subscribe(me.event.KEYDOWN, function (action, keyCode, edge){
                         if(action === "start"){
    
-                            me.state.change(me.state.PLAY); // changes the state to PLAY
+                            me.state.change(me.state.PLAY); // switches the MENU state to PLAY
                         };
                     });
                     

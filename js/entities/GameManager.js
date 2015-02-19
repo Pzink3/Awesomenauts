@@ -10,8 +10,8 @@ game.GameManager = Object.extend({
         this.now = new Date().getTime();
         
         if(game.data.player.dead){
-            me.game.world.removeChild(game.data.player);
-            me.state.current().resetPlayer(10, 0);
+            me.game.world.removeChild(game.data.player); // removes the player child
+            me.state.current().resetPlayer(10, 0); // resets the game manager's player
         }
         
         if(Math.round(this.now/1000)%10 ===0 && (this.now - this.lastCreep >= 1000)){
