@@ -15,7 +15,7 @@ game.EnemyBaseEntity = me.Entity.extend({
         this.alwaysUpdate = true;
         this.body.onCollision = this.onCollision.bind(this);
         
-        this.type = "EnemyBase";
+        this.type = "EnemyBase"; // sets the name as EnemyBase
        
     
     this.renderable.addAnimation("idle", [0]);

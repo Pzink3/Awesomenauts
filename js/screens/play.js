@@ -4,7 +4,7 @@ game.PlayScreen = me.ScreenObject.extend({
 	 */
 	onResetEvent: function() {
 		// reset the score
-		game.data.score = 0;
+		game.data.score = 0; // resets the score to 0
 
                 
                 me.levelDirector.loadLevel("level01"); // calls the level director to load level
@@ -24,7 +24,7 @@ game.PlayScreen = me.ScreenObject.extend({
                 me.input.bindKey(me.input.KEY.A, "attack"); // binds the a key to make the player attack
                 
 		// add our HUD to the game world
-		this.HUD = new game.HUD.Container();
+		this.HUD = new game.HUD.Container(); // adds a new HUD container
 		me.game.world.addChild(this.HUD); // adds HUD
 	},
 

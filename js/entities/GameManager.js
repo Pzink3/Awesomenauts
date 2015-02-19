@@ -2,7 +2,7 @@ game.GameManager = Object.extend({
     init: function(x, y, settings){ // initializes the game manager's functions
         this.now = new Date().getTime();
         this.lastCreep = new Date().getTime();
-        this.paused = false;
+        this.paused = false; // tells the manager to not pause the game
         this.alwaysUpdate = true; // tells the game manager to always update.
     },
     

@@ -35,7 +35,6 @@
 		<!-- Game Scripts -->
 		<script type="text/javascript" src="js/game.js"></script> <!-- calls the game js file -->
 		<script type="text/javascript" src="js/resources.js"></script> <!-- calls all of the js resources -->
-
                 <script type="text/javascript" src="js/entities/entities.js"></script> <!-- calls the js entities file -->
                 <script type="text/javascript" src="js/entities/EnemyBaseEntity.js"></script>
                 <script type="text/javascript" src="js/entities/EnemyCreep.js"></script>

@@ -22,12 +22,6 @@ var game = {
                 creepMoveSpeed: 5,
                 gameManager: "",
                 player: "",
-                exp: 0,
-                gold: 0,
-                exp1: 0,
-                exp2: 0,
-                exp3: 0,
-                exp4: 0
 	},
 	
 	
@@ -55,10 +49,10 @@ var game = {
 
 
 	// Load the resources.
-	me.loader.preload(game.resources);
+	me.loader.preload(game.resources); // loads all of the resources
 
 	// Initialize melonJS and display a loading screen.
-	me.state.change(me.state.LOADING);
+	me.state.change(me.state.LOADING); // displays the loading screen
 },
 
 	// Run on game resources loaded.
@@ -68,8 +62,8 @@ var game = {
                 me.pool.register("EnemyBase", game.EnemyBaseEntity); // runs the enemy base
                 me.pool.register("EnemyCreep", game.EnemyCreep, true); // runs the enemy creep
                 me.pool.register("GameManager", game.GameManager); // runs the game manager
-		me.state.set(me.state.MENU, new game.TitleScreen()); // sets the menu
-		me.state.set(me.state.PLAY, new game.PlayScreen()); // sets gameplay
+		me.state.set(me.state.MENU, new game.TitleScreen); // sets the menu
+		me.state.set(me.state.PLAY, new game.PlayScreen); // sets gameplay
 
 		// Start the game.
 		me.state.change(me.state.MENU); // starts game

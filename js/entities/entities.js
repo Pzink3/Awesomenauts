@@ -107,10 +107,10 @@ game.PlayerEntity = me.Entity.extend({
      
        else if(this.body.vel.x !== 0) {
        if(!this.renderable.isCurrentAnimation("walk")){
-           this.renderable.setCurrentAnimation("walk");
+          this.renderable.setCurrentAnimation("walk");
        } 
    }else if(!this.renderable.isCurrentAnimation("attack")){
-             this.renderable.setCurrentAnimation("idle");
+            this.renderable.setCurrentAnimation("idle");
    }
    
  
@@ -118,7 +118,7 @@ game.PlayerEntity = me.Entity.extend({
        this.body.update(delta); // updates delta
    
        
-       this._super(me.Entity, "update", [delta]);
+       this._super(me.Entity, "update", [delta]); // updates the delta
        return true;
    },
    

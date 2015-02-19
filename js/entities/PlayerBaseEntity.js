@@ -11,10 +11,10 @@ game.PlayerBaseEntity = me.Entity.extend({
             }
             }]);
         this.broken = false;
-        this.health = 10;
+        this.health = 10; // sets the health to 10
         this.alwaysUpdate = true;
         this.body.onCollision = this.onCollision.bind(this);      
-        this.type = "PlayerBase";
+        this.type = "PlayerBase"; // sets the name as PlayerBase
     
     this.renderable.addAnimation("idle", [0]);
     this.renderable.addAnimation("broken", [1]);
