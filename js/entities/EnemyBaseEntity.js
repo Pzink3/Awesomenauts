@@ -18,9 +18,9 @@ game.EnemyBaseEntity = me.Entity.extend({
         this.type = "EnemyBase"; // sets the name as EnemyBase
        
     
-    this.renderable.addAnimation("idle", [0]);
-    this.renderable.addAnimation("broken", [1]);
-    this.renderable.setCurrentAnimation("idle");
+    this.renderable.addAnimation("idle", [0]); // adds the ememy's idle animation
+    this.renderable.addAnimation("broken", [1]); // adds the enemy's broken animation
+    this.renderable.setCurrentAnimation("idle"); // sets the enemy's idle animation
 },
         
     
