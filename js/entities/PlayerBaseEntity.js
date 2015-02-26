@@ -12,7 +12,7 @@ game.PlayerBaseEntity = me.Entity.extend({
             }]);
         this.broken = false; // tells the player base entity to not break
         this.health = 10; // sets the health to 10
-        this.alwaysUpdate = true;
+        this.alwaysUpdate = true; // tells the player base entity to always update
         this.body.onCollision = this.onCollision.bind(this);      
         this.type = "PlayerBase"; // sets the name as PlayerBase
     

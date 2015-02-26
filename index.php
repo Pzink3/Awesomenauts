@@ -36,10 +36,6 @@
 		<script type="text/javascript" src="js/game.js"></script> <!-- calls the game js file -->
 		<script type="text/javascript" src="js/resources.js"></script> <!-- calls all of the js resources -->
                 <script type="text/javascript" src="js/entities/entities.js"></script> <!-- calls the js entities file -->
-                <script type="text/javascript" src="js/entities/EnemyBaseEntity.js"></script>
-                <script type="text/javascript" src="js/entities/EnemyCreep.js"></script>
-                <script type="text/javascript" src="js/entities/GameManager.js"></script>
-                <script type="text/javascript" src="js/entities/PlayerBaseEntity.js"></script>
 		<script type="text/javascript" src="js/entities/HUD.js"></script> <!-- calls the HUD js file -->
 
 		<script type="text/javascript" src="js/screens/title.js"></script> <!-- calls the js title file -->
@@ -72,7 +68,7 @@
 			});
 		</script>
         <center>
-            <sub><font color='white'>&copy 2015 Parker Zink Productions. All Rights Reserved.</font></sub>
+            <sub><font color='white'>&copy 2015 Parker Zink Productions&trade;. All Rights Reserved.</font></sub>
         </center>
 	</body>
 </html>

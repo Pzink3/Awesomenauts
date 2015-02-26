@@ -22,6 +22,12 @@ var game = {
                 creepMoveSpeed: 5, // sets the creep's speed to 5
                 gameManager: "",
                 player: "",
+                exp: 0,
+                gold: 0,
+                exp1: 0,
+                exp2: 0,
+                exp3: 0,
+                exp4: 0
 	},
 	
 	
@@ -66,7 +72,7 @@ var game = {
 		me.state.set(me.state.PLAY, new game.PlayScreen); // sets play state
 
 		// Start the game.
-		me.state.change(me.state.MENU); // starts game
+		me.state.change(me.state.MENU); // starts the game with the menu
                
 	}
 };
