@@ -74,6 +74,7 @@ game.PlayerEntity = me.Entity.extend({
    checkIfDead: function(){
      if(this.health <= 0){    
            return true;
+          
        }
        return false;
    },
@@ -111,6 +112,7 @@ game.PlayerEntity = me.Entity.extend({
   jump: function(){
      this.jumping = true;
            this.body.vel.y -= this.body.accel.y * me.timer.tick;  
+           
   },
   
   setAnimation: function(){
@@ -186,6 +188,7 @@ game.PlayerEntity = me.Entity.extend({
               && (Math.abs(ydif) <=40) && (xdif>0) && this.facing==='left' || (xdif<0) && this.facing==='right'){
                 this.lastHit = this.now;
                 response.b.loseHealth(1);
+                
             }
        }
    },

@@ -33,11 +33,12 @@ game.resources = [
 	 * {name: "example_bgm", type: "audio", src: "data/bgm/"},
 	 */	
            { name: "the-glory-days", type: "audio", src: "data/bgm/" }, // identifies the song, "The Glory Days" from the bgm folder
-           { name: "the-incredits", type: "audio", src: "data/bgm/" } // identifies the song, "The Incredits" from the bgm folder
+           { name: "the-incredits", type: "audio", src: "data/bgm/" }, // identifies the song, "The Incredits" from the bgm folder
           
 	/* Sound effects. 
 	 * @example
 	 * {name: "example_sfx", type: "audio", src: "data/sfx/"}
 	 */
-        
+            {name: "punch-or-whack", type: "audio", src: "data/sfx/"},
+            {name: "jump", type: "audio", src: "data/sfx/"}
         ];
