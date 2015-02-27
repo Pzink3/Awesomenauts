@@ -1,7 +1,7 @@
 
 game.PlayerEntity = me.Entity.extend({
    init: function(x, y, settings){ // initializes the player entity's functions
-       this.setSuper();
+       this.setSuper(x, y);
        this.setPlayerTimers();    
        this.setAttributes();
        
