@@ -28,7 +28,8 @@ var game = {
                 exp1: 0,
                 exp2: 0,
                 exp3: 0,
-                exp4: 0
+                exp4: 0,
+                win: ""
 	},
 	
 	
@@ -70,6 +71,7 @@ var game = {
                 me.pool.register("EnemyCreep", game.EnemyCreep, true); // runs the enemy creep
                 me.pool.register("GameTimerManager", game.GameTimerManager); // runs the game timer manager
                 me.pool.register("HeroDeathManager", game.HeroDeathManager); // runs the hero death manager
+                me.pool.register("ExperienceManager", game.ExperienceManager); // runs the experience manager
 		me.state.set(me.state.MENU, new game.TitleScreen); // sets the menu state
 		me.state.set(me.state.PLAY, new game.PlayScreen); // sets play state
 

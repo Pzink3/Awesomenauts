@@ -45,6 +45,21 @@ game.HeroDeathManager = Object.extend({
             me.game.world.removeChild(game.data.player); // removes the player child
             me.state.current().resetPlayer(10, 0); // resets the game manager's player
         }
-        
+        return true;
    }
+});
+
+game.ExperienceManager = Object.extend({
+    init: function(x, y, settings){
+        this.alwaysUpdate = true;
+    },
+    
+    update: function(){
+        if(game.data.win === true){
+        game.data.exp += 10;
+    }else if(game.data.win === false){
+        game.data.exp += 1;
+    }
+    return true;
+    }
 });
