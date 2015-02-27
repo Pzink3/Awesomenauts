@@ -150,13 +150,23 @@ game.PlayerEntity = me.Entity.extend({
            }
         else if(xdif>-35 && this.facing==='right' && (xdif<0)){
                this.body.vel.x = 0;
+
            }else if(xdif<70 && this.facing==='left' && xdif>0){
                this.body.vel.x = 0;
+
            }
            if(this.renderable.isCurrentAnimation("attack") && this.now-this.lastHit >= game.data.playerAttackTimer) {
+               console.log("tower Hit");
                this.lastHit = this.now;
-                response.b.loseHealth(game.data.playerAttack)
-           }         
+              if(response.b.loseHealth(game.data.playerAttack)){
+                  game.data.gold += 1; // increases gold
+                  console.log("Current gold: " + game.data.gold); // logs in the gold console
+              }
+              response.b.loseHealth(game.data.playerAttack);
+           }
+          
+       
+               
    }else if(response.b.type==="EnemyCreep"){
           var xdif = this.pos.y - response.b.pos.x;
           var ydif = this.pos.x - response.b.pos.y;
@@ -178,8 +188,10 @@ game.PlayerEntity = me.Entity.extend({
                 response.b.loseHealth(1);
             }
        }
+   },
+   collideWithEnemyBase: function(response){
+       
    }
-  
 });
 
 
