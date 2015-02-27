@@ -15,8 +15,12 @@ game.PlayScreen = me.ScreenObject.extend({
                 var player = me.pool.pull("player", 0, 420, {}); // pulls the player
                 me.game.world.addChild(player, 5); // adds the player
                 
-                var gamemanager = me.pool.pull("GameManager", 0, 0, {}); // pulls the game manager
-                me.game.world.addChild(gamemanager, 0); // adds the game manager
+                var gameTimerManager = me.pool.pull("GameTimerManager", 0, 0, {}); // pulls the game timer manager
+                me.game.world.addChild(gameTimerManager, 0); // adds the game timer manager
+                
+                var heroDeathManager = me.pool.pull("HeroDeathManager", 0, 0, {}); // pulls the hero death manager
+                me.game.world.addChild(heroDeathManager, 0); // adds the hero death manager
+                
                 me.input.bindKey(me.input.KEY.RIGHT, "right"); // binds the right key to make the player go right
                 me.input.bindKey(me.input.KEY.LEFT, "left"); // binds the left key to make the player go left
                 me.input.bindKey(me.input.KEY.SPACE, "jump"); // binds the space key to make the player jump

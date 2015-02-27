@@ -20,7 +20,8 @@ var game = {
                 creepAttackTimer: 1000, // sets the creep's attack timer to 1000
                 playerMoveSpeed: 5, // sets the player's speed to 5
                 creepMoveSpeed: 5, // sets the creep's speed to 5
-                gameManager: "",
+                gameTimerManager: "",
+                heroDeathManager: "",
                 player: "",
                 exp: 0,
                 gold: 0,
@@ -67,7 +68,8 @@ var game = {
                 me.pool.register("PlayerBase", game.PlayerBaseEntity); // runs the player base
                 me.pool.register("EnemyBase", game.EnemyBaseEntity); // runs the enemy base
                 me.pool.register("EnemyCreep", game.EnemyCreep, true); // runs the enemy creep
-                me.pool.register("GameManager", game.GameManager); // runs the game manager
+                me.pool.register("GameTimerManager", game.GameTimerManager); // runs the game timer manager
+                me.pool.register("HeroDeathManager", game.HeroDeathManager); // runs the hero death manager
 		me.state.set(me.state.MENU, new game.TitleScreen); // sets the menu state
 		me.state.set(me.state.PLAY, new game.PlayScreen); // sets play state
 
