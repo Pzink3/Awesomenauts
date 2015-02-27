@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-            <style>
+<!--            <style>
               body {
 
               }
@@ -9,7 +9,7 @@
               sub {
               font-family: Incredibles;
               }
-    </style>
+    </style>-->
 		<title>AWESOMENAUTS</title>
 		<link rel="stylesheet" type="text/css" media="screen" href="index.css"> <!-- calls the css index file -->
 		<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -67,8 +67,6 @@
 				}
 			});
 		</script>
-        <center>
-            <sub><font color='white'>&copy 2015 Parker Zink Productions&trade;. All Rights Reserved.</font></sub>
-        </center>
+        
 	</body>
 </html>

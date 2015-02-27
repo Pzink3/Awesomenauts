@@ -11,7 +11,7 @@ game.PlayerEntity = me.Entity.extend({
 
    
    me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
-   
+   this.renderable.addAnimation("idle", [78]);
    this.renderable.setCurrentAnimation("idle");
    this.addAnimation(); // adds the player entity's animation
    },
@@ -62,14 +62,11 @@ game.PlayerEntity = me.Entity.extend({
      
    update: function(delta){
        this.now = new Date().getTime;   
-        this.dead = checkIfDead();
-        this.checkKeyPressesAndMove();
-       this.setAnimation();
-    
+        this.dead = this.checkIfDead();
+        this.checkKeysPressesAndMove();
+       this.setAnimation();   
        me.collision.check(this, true, this.collideHandler.bind(this), true);
-       this.body.update(delta); // updates delta
-   
-       
+       this.body.update(delta); // updates delta     
        this._super(me.Entity, "update", [delta]); // updates the delta
        return true;
    },
@@ -141,6 +138,7 @@ game.PlayerEntity = me.Entity.extend({
 
    collideHandler: function(response){
        if(response.b.type==='EnemyBaseEntity'){
+           this.collideWithEnemyBase(response);
            var ydif = this.pos.y - response.b.pos.y;
            var xdif = this.pos.x - response.b.pos.x;
            
@@ -152,20 +150,13 @@ game.PlayerEntity = me.Entity.extend({
            }
         else if(xdif>-35 && this.facing==='right' && (xdif<0)){
                this.body.vel.x = 0;
-               //this.pos.x = this.pos.x -1;
            }else if(xdif<70 && this.facing==='left' && xdif>0){
                this.body.vel.x = 0;
-            //   this.pos.x = this.pos.x +1;
            }
            if(this.renderable.isCurrentAnimation("attack") && this.now-this.lastHit >= game.data.playerAttackTimer) {
-               console.log("tower Hit");
                this.lastHit = this.now;
-              if(response.b.loseHealth(game.data.playerAttack)){
-                  game.data.gold += 1; // increases gold
-                  console.log("Current gold: " + game.data.gold); // logs in the gold console
-              }
-           
-           }
+                response.b.loseHealth(game.data.playerAttack)
+           }         
    }else if(response.b.type==="EnemyCreep"){
           var xdif = this.pos.y - response.b.pos.x;
           var ydif = this.pos.x - response.b.pos.y;
@@ -188,6 +179,7 @@ game.PlayerEntity = me.Entity.extend({
             }
        }
    }
+  
 });
 
 
