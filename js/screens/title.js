@@ -15,7 +15,7 @@ game.TitleScreen = me.ScreenObject.extend({
                   },
                   
                   draw: function(renderer){
-                      me.audio.playTrack("the-glory-days"); // plays the song, "The Glory Days"
+                      // me.audio.playTrack("the-glory-days"); // plays the song, "The Glory Days"
                       this.font.draw(renderer.getContext(), "AWESOMENAUTS", 450, 130); // draws the title of the game
                       this.font.draw(renderer.getContext(), "Press ENTER to start!", 250, 530); // draws the message that states to press enter to start the game
                   }
