@@ -5,28 +5,58 @@ game.TitleScreen = me.ScreenObject.extend({
        
 	onResetEvent: function(){
               me.game.world.addChild(new me.Sprite(0, 0, me.loader.getImage('title-screen')), -10); // loads and gets the title screen image
-              
-              me.input.bindKey(me.input.KEY.ENTER, "start"); // binds the enter key to start the game
+        
               
               me.game.world.addChild(new (me.Renderable.extend({
                   init: function() {
-                      this._super(me.Renderable, "init", [510, 30, me.game.viewport.width, me.game.viewport.height]);
+                      this._super(me.Renderable, "init", [270, 240, 300, 50]);
                       this.font = new me.Font("Aharoni", 46, "white"); // sets aharoni as the selected drawing font
+                      me.input.registerPointerEvent('pointerdown', this, this.newGame.bind(this), true);
                   },
                   
                   draw: function(renderer){
                       // me.audio.playTrack("the-glory-days"); // plays the song, "The Glory Days"
-                      this.font.draw(renderer.getContext(), "AWESOMENAUTS", 450, 130); // draws the title of the game
-                      this.font.draw(renderer.getContext(), "Press ENTER to start!", 250, 530); // draws the message that states to press enter to start the game
+                      this.font.draw(renderer.getContext(), "NEW GAME", this.pos.x, this.pos.y); // draws the words "NEW GAME"
+                     
+                  },
+                  
+                  update: function(dt){
+                      return true;
+                  },
+                  
+                  newGame: function(){
+                      me.input.releasePointerEvent('pointerdown', this);
+                      me.save.remove('exp');
+                      me.save.remove('exp1');
+                      me.save.remove('exp2');
+                      me.save.remove('exp3');
+                      me.save.remove('exp4');
+                      me.state.change(me.state.PLAY); // switches the MENU state to PLAY
                   }
               })));
-                    
-                    this.handler = me.event.subscribe(me.event.KEYDOWN, function(action, keyCode, edge){
-                        if(action === "start"){
-   
-                            me.state.change(me.state.PLAY); // switches the MENU state to PLAY
-                        }
-                    });
+              
+               me.game.world.addChild(new (me.Renderable.extend({
+                  init: function() {
+                      this._super(me.Renderable, "init", [380, 340, 250, 50]);
+                      this.font = new me.Font("Aharoni", 46, "white"); // sets aharoni as the selected drawing font
+                      me.input.registerPointerEvent('pointerdown', this, this.newGame.bind(this), true);
+                  },
+                  
+                  draw: function(renderer){
+                      // me.audio.playTrack("the-glory-days"); // plays the song, "The Glory Days"
+                      this.font.draw(renderer.getContext(), "CONTINUE", this.pos.x, this.pos.y); // draws the words "NEW GAME"
+                     
+                  },
+                  
+                  update: function(dt){
+                      return true;
+                  },
+                  
+                  newGame: function(){
+                      me.input.releasePointerEvent('pointerdown', this);
+                      me.state.change(me.state.PLAY); // switches the MENU state to PLAY
+                  }
+              })));
                     
                 },
                 
@@ -37,8 +67,8 @@ game.TitleScreen = me.ScreenObject.extend({
 	 *  action to perform when leaving this screen (state change)
 	 */
 	onDestroyEvent: function() {
-          me.input.unbindKey(me.input.KEY.ENTER); // unbinds the enter key
+
           me.audio.stop("the-glory-days"); // stops the song, "The Glory Days"
-          me.event.unsubscribe(this.handler); // unsubscribes the handler
+
         }
 });
