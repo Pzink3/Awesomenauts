@@ -6,8 +6,8 @@ var game = {
 	data : {
 		// score
 		score : 0, 
-                enemyBaseHealth: 10, // sets the enemy base's health to 10 lives
-                playerBaseHealth: 10, // sets the playyer base's health to 10 lives
+                enemyBaseHealth: 1, // sets the enemy base's health to 10 lives
+                playerBaseHealth: 1, // sets the playyer base's health to 10 lives
                 enemyCreepHealth: 10, // sets the enemy creep's health to 10 lives
                 playerHealth: 10, // sets the player's health to 10 lives
                 enemyCreepAttack: 1, // sets the enemy creep to make one attack
@@ -49,6 +49,7 @@ var game = {
 	}
         
         me.save.add({exp: 0, exp1: 0, exp3: 0, exp4: 0});
+        
 	// Initialize the audio.
 	me.audio.init("mp3,ogg"); // intializes the mp3 and ogg files
       
