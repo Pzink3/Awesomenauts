@@ -76,6 +76,7 @@ var game = {
                 me.pool.register("ExperienceManager", game.ExperienceManager); // runs the experience manager
 		me.state.set(me.state.MENU, new game.TitleScreen); // sets the menu state
 		me.state.set(me.state.PLAY, new game.PlayScreen); // sets play state
+                me.state.set(me.state.SPENDEXP, new game.SpendExp); // sets the spendexp state
 
 		// Start the game.
 		me.state.change(me.state.MENU); // starts the game with the menu
