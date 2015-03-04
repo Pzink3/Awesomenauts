@@ -24,7 +24,15 @@ game.PlayScreen = me.ScreenObject.extend({
                 
                 var ExperienceManager = me.pool.pull("ExperienceManager", 0, 0, {}); // pulls the experience manager
                 me.game.world.addChild(ExperienceManager, 0); // adds the hero death manager
+                 
+                var SpendGold = me.pool.pull("SpendGold", 0, 0, {}); // pulls the spend gold class
+                me.game.world.addChild(SpendGold, 0); // adds the hero death manager
                 
+                
+                me.input.bindKey(me.input.KEY.B, "buy");
+                me.input.bindKey(me.input.KEY.Q, "skill1");
+                me.input.bindKey(me.input.KEY.W, "skill2");
+                me.input.bindKey(me.input.KEY.E, "skill3");
                 me.input.bindKey(me.input.KEY.RIGHT, "right"); // binds the right key to make the player go right
                 me.input.bindKey(me.input.KEY.LEFT, "left"); // binds the left key to make the player go left
                 me.input.bindKey(me.input.KEY.SPACE, "jump"); // binds the space key to make the player jump

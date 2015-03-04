@@ -29,7 +29,9 @@ var game = {
                 exp2: 0,
                 exp3: 0,
                 exp4: 0,
-                win: ""
+                win: "",
+                pausePos: "",
+                buyScreen: "",
 	},
 	
 	
@@ -76,6 +78,7 @@ var game = {
                 me.pool.register("GameTimerManager", game.GameTimerManager); // runs the game timer manager
                 me.pool.register("HeroDeathManager", game.HeroDeathManager); // runs the hero death manager
                 me.pool.register("ExperienceManager", game.ExperienceManager); // runs the experience manager
+                me.pool.register("SpendGold", game.SpendGold); // runs the spend gold class
 		me.state.set(me.state.MENU, new game.TitleScreen); // sets the menu state
 		me.state.set(me.state.PLAY, new game.PlayScreen); // sets play state
                 me.state.set(me.state.SPENDEXP, new game.SpendExp); // sets the spendexp state

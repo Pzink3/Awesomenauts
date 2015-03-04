@@ -12,6 +12,7 @@ game.resources = [
            { name: "creep1", type:"image", src: "data/img/brainmonster.png" }, // loads the brain monster creep.
            { name: "title-screen", type:"image", src: "data/img/title.png" }, // loads the title screen image.
            { name: "exp-screen", type:"image", src: "data/img/loadpic.png" }, // loads the load pic.
+           { name: "gold-screen", type:"image", src: "data/img/spend.png" }, // loads the spend pic.
          
         
 
