@@ -57,7 +57,7 @@ var game = {
 		});
 	}
         
-        me.save.add({exp: 0, exp1: 0, exp3: 0, exp4: 0});
+                      me.save.add({exp: 0, exp1: 0, exp3: 0, exp4: 0});
         
         me.state.SPENDEXP = 112;
         
@@ -74,10 +74,12 @@ var game = {
 
 	// Initialize melonJS and display a loading screen.
 	me.state.change(me.state.LOADING); // displays the loading screen
+        me.audio.play("ticking-clock", true);
 },
 
 	// Run on game resources loaded.
 	"loaded" : function () {
+                me.audio.stop("ticking-clock");
                 me.pool.register("player", game.PlayerEntity, true); // runs the player entity
                 me.pool.register("PlayerBase", game.PlayerBaseEntity); // runs the player base
                 me.pool.register("EnemyBase", game.EnemyBaseEntity); // runs the enemy base

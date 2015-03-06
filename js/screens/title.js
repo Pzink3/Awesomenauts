@@ -4,9 +4,10 @@ game.TitleScreen = me.ScreenObject.extend({
 	 */
        
 	onResetEvent: function(){
+             
               me.game.world.addChild(new me.Sprite(0, 0, me.loader.getImage('title-screen')), -10); // loads and gets the title screen image
         
-              
+              me.audio.play("the-glory-days");
               me.game.world.addChild(new (me.Renderable.extend({
                   init: function() {
                       this._super(me.Renderable, "init", [270, 240, 300, 50]);
@@ -73,7 +74,7 @@ game.TitleScreen = me.ScreenObject.extend({
 	 *  action to perform when leaving this screen (state change)
 	 */
 	onDestroyEvent: function() {
-
+          me.audio.play("mouse-click");  
           me.audio.stop("the-glory-days"); // stops the song, "The Glory Days"
 
         }
