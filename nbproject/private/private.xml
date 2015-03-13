@@ -5,11 +5,9 @@
         <group>
             <file>file:/C:/xampp/htdocs/ParkerZinkAwesomenauts/js/screens/title.js</file>
             <file>file:/C:/xampp/htdocs/ParkerZinkAwesomenauts/js/screens/spendExp.js</file>
-            <file>file:/C:/xampp/htdocs/ParkerZinkAwesomenauts/README.md</file>
             <file>file:/C:/xampp/htdocs/ParkerZinkAwesomenauts/js/entities/entities.js</file>
             <file>file:/C:/xampp/htdocs/ParkerZinkAwesomenauts/lib/melonJS-1.1.0.js</file>
             <file>file:/C:/xampp/htdocs/ParkerZinkAwesomenauts/js/entities/EnemyBaseEntity.js</file>
-            <file>file:/C:/xampp/htdocs/ParkerZinkAwesomenauts/lib/melonJS-1.1.0-min.js</file>
             <file>file:/C:/xampp/htdocs/ParkerZinkAwesomenauts/data/img/skeletonDagger.png</file>
             <file>file:/C:/xampp/htdocs/ParkerZinkAwesomenauts/js/game.js</file>
             <file>file:/C:/xampp/htdocs/ParkerZinkAwesomenauts/data/img/spear.png</file>
@@ -17,7 +15,6 @@
             <file>file:/C:/xampp/htdocs/ParkerZinkAwesomenauts/data/img/miniMap.png</file>
             <file>file:/C:/xampp/htdocs/ParkerZinkAwesomenauts/js/resources.js</file>
             <file>file:/C:/xampp/htdocs/ParkerZinkAwesomenauts/package.json</file>
-            <file>file:/C:/xampp/htdocs/ParkerZinkAwesomenauts/Gruntfile.js</file>
             <file>file:/C:/xampp/htdocs/ParkerZinkAwesomenauts/index.php</file>
             <file>file:/C:/xampp/htdocs/ParkerZinkAwesomenauts/js/entities/GameManager.js</file>
             <file>file:/C:/xampp/htdocs/ParkerZinkAwesomenauts/js/entities/EnemyCreep.js</file>

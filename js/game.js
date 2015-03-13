@@ -37,8 +37,8 @@ var game = {
                 exp4: 0,
                 win: "",
                 pausePos: "",
-                buyScreen: "",
-                buytext: "",
+                buyscreen: "",
+                buytext: ""
 	},
 	
 	
@@ -57,8 +57,9 @@ var game = {
 		});
 	}
         
-                      me.save.add({exp: 0, exp1: 0, exp3: 0, exp4: 0});
+        me.save.add({exp: 0, exp1: 0, exp2: 0, exp3: 0, exp4: 0});
         
+
         me.state.SPENDEXP = 112;
         
 	// Initialize the audio.
@@ -88,9 +89,9 @@ var game = {
                 me.pool.register("HeroDeathManager", game.HeroDeathManager); // runs the hero death manager
                 me.pool.register("ExperienceManager", game.ExperienceManager); // runs the experience manager
                 me.pool.register("SpendGold", game.SpendGold); // runs the spend gold class
-		me.state.set(me.state.MENU, new game.TitleScreen); // sets the menu state
-		me.state.set(me.state.PLAY, new game.PlayScreen); // sets play state
-                me.state.set(me.state.SPENDEXP, new game.SpendExp); // sets the spendexp state
+		me.state.set(me.state.MENU, new game.TitleScreen()); // sets the menu state
+		me.state.set(me.state.PLAY, new game.PlayScreen()); // sets play state
+                me.state.set(me.state.SPENDEXP, new game.SpendExp()); // sets the spendexp state
 
 		// Start the game.
 		me.state.change(me.state.MENU); // starts the game with the menu

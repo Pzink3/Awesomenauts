@@ -6,7 +6,6 @@ game.TitleScreen = me.ScreenObject.extend({
 	onResetEvent: function(){
              
               me.game.world.addChild(new me.Sprite(0, 0, me.loader.getImage('title-screen')), -10); // loads and gets the title screen image
-        
               me.audio.play("the-glory-days");
               me.game.world.addChild(new (me.Renderable.extend({
                   init: function() {
@@ -32,6 +31,7 @@ game.TitleScreen = me.ScreenObject.extend({
                       me.save.remove('exp2');
                       me.save.remove('exp3');
                       me.save.remove('exp4');
+                      me.save.add({exp: 0, exp1: 0, exp2: 0, exp3: 0, exp4: 0});
                       me.state.change(me.state.PLAY); // switches the MENU state to PLAY
                   }
               })));
@@ -59,9 +59,8 @@ game.TitleScreen = me.ScreenObject.extend({
                       game.data.exp2 = me.save.exp2;
                       game.data.exp3 = me.save.exp3;
                       game.data.exp4 = me.save.exp4;
-                      
                       me.input.releasePointerEvent('pointerdown', this);
-                      me.state.change(me.state.SPENDEXP); // switches the MENU state to PLAY
+                      me.state.change(me.state.SPENDEXP); // switches the MENU state to SPENDEXP
                   }
               })));
                     

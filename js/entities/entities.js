@@ -110,8 +110,10 @@ game.PlayerEntity = me.Entity.extend({
   },
   
   jump: function(){
+      
      this.jumping = true;
            this.body.vel.y -= this.body.accel.y * me.timer.tick;  
+           
            
   },
   
@@ -211,6 +213,7 @@ game.PlayerEntity = me.Entity.extend({
    hitCreep: function(response){
        if(response.b.loseHealth(game.data.playerAttack)){
            // adds one gold for a creep kill
+           
                   game.data.gold += 1; // increases gold
                   console.log("Current gold: " + game.data.gold); // logs in the gold console
                   }

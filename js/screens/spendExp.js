@@ -20,23 +20,24 @@ game.SpendExp = me.ScreenObject.extend({
                   draw: function(renderer){
                       
                       this.font.draw(renderer.getContext(), "PRESS F1-F4 TO BUY, AND F5 TO SKIP", this.pos.x, this.pos.y); 
-                      this.font.draw(renderer.getContext(), "CURRENT EXP: " + game.data.exp.toString() + ((game.data.exp+1)*10), this.pos.x + 100, this.pos.y + 50);
-                      this.font.draw(renderer.getContext(), "F1: INCREASE GOLD PRODUCTION CURRENT LEVEL " + game.data.exp.toString() + " PRICE: " + ((game.data.exp1+1)*10), this.pos.x + 200, this.pos.y + 100);
-                      this.font.draw(renderer.getContext(), "F2: ADD STARTING GOLD " + game.data.exp.toString(), this.pos.x + 200, this.pos.y + 150);
-                      this.font.draw(renderer.getContext(), "F3: INCREASE ATTACK DAMAGE " + game.data.exp.toString(), this.pos.x + 200, this.pos.y + 200);
-                      this.font.draw(renderer.getContext(), "F4: INCREASE STARTING HEALTH " + game.data.exp.toString(), this.pos.x + 200, this.pos.y + 250);
+                      this.font.draw(renderer.getContext(), "CURRENT EXP: " + game.data.exp.toString() + ((game.data.exp + 1)* 10), this.pos.x + 100, this.pos.y + 50);
+                      this.font.draw(renderer.getContext(), "F1: INCREASE GOLD PRODUCTION CURRENT LEVEL " + game.data.exp1.toString() + " COST: " + ((game.data.exp1 + 1)* 10), this.pos.x + 200, this.pos.y + 100);
+                      this.font.draw(renderer.getContext(), "F2: ADD STARTING GOLD " + game.data.exp2.toString() + "COST: " + ((game.data.exp2 + 2)* 10), this.pos.x + 200, this.pos.y + 150);
+                      this.font.draw(renderer.getContext(), "F3: INCREASE ATTACK DAMAGE " + game.data.exp3.toString() + "COST: " + ((game.data.exp3 + 3)* 10), this.pos.x + 200, this.pos.y + 200);
+                      this.font.draw(renderer.getContext(), "F4: INCREASE STARTING HEALTH " + game.data.exp4.toString() + "COST: " + ((game.data.exp4 + 4)* 10), this.pos.x + 200, this.pos.y + 250);
                   }
                   
                  
               })));
-                    this.handler = me.event.subscribe(me.event.KEYDOWN, function(action, keycode, edge){
+                    this.handler = me.event.subscribe(me.event.KEYDOWN, function(action, keyCode, edge){
                        if(action === "F1"){
                            
                        }else if(action === "F2"){
-                            }else if(action === "F3"){
-                                 }else if(action === "F4"){
-                                      }else if(action === "F5"){
-                                          me.state.change(me.state.PLAY);
+                       }else if(action === "F3"){
+                       }else if(action === "F4"){
+                       }else if(action === "F5"){
+                       me.state.change(me.state.PLAY);
+                             
                        }
                     });
                 },
@@ -48,14 +49,14 @@ game.SpendExp = me.ScreenObject.extend({
 	 *  action to perform when leaving this screen (state change)
 	 */
 	onDestroyEvent: function() {
-            me.input.bindKey(me.input.KEY.F1, "F1");
-            me.input.bindKey(me.input.KEY.F2, "F2");
-            me.input.bindKey(me.input.KEY.F3, "F3");
-            me.input.bindKey(me.input.KEY.F4, "F4");
-            me.input.bindKey(me.input.KEY.F5, "F5");
+            me.input.unbindKey(me.input.KEY.F1, "F1");
+            me.input.unbindKey(me.input.KEY.F2, "F2");
+            me.input.unbindKey(me.input.KEY.F3, "F3");
+            me.input.unbindKey(me.input.KEY.F4, "F4");
+            me.input.unbindKey(me.input.KEY.F5, "F5");
             me.event.unsubscribe(this.handler);
-
-          me.audio.stop("fnaf-3-menu-music"); // stops the song, "The Glory Days"
-
+       
+            me.audio.stop("fnaf-3-menu-music");
+            
         }
 });

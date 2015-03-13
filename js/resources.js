@@ -36,12 +36,14 @@ game.resources = [
 	 */	
            { name: "the-glory-days", type: "audio", src: "data/bgm/" }, // identifies the song, "The Glory Days" from the bgm folder
            { name: "the-incredits", type: "audio", src: "data/bgm/" }, // identifies the song, "The Incredits" from the bgm folder
-           { name: "fnaf-3-menu-music", type: "audio", src: "data/bgm/" },
+           { name: "fnaf-3-menu-music", type: "audio", src: "data/bgm/" }, // identfies the fnaf3 music
           
 	/* Sound effects. 
 	 * @example
 	 * {name: "example_sfx", type: "audio", src: "data/sfx/"}
 	 */
-           { name: "mouse-click", type: "audio", src: "data/sfx/" },
-           { name: "ticking-clock", type: "audio", src: "data/sfx/"},
+           { name: "mouse-click", type: "audio", src: "data/sfx/" }, // identifies the mouse click sound effect
+           { name: "ticking-clock", type: "audio", src: "data/sfx/" },  // identifies the ticking clock sound effect
+           { name: "punch-or-whack", type: "audio", src: "data/sfx/" }, // identifies the punch of whack sound effect
+           { name: "jump", type: "audio", src: "data/sfx/" }, // identifies the jump sound effect
         ];
