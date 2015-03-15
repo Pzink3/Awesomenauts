@@ -8,7 +8,6 @@ game.PlayScreen = me.ScreenObject.extend({
 
                 
                 me.levelDirector.loadLevel("level01"); // calls the level director to load level
-                me.audio.play("wait");  
 
                 me.audio.playTrack("the-incredits"); // plays the song, "The Incredits"
                 
@@ -32,10 +31,10 @@ game.PlayScreen = me.ScreenObject.extend({
                 me.game.world.addChild(spendGold, 0); // adds the hero death manager
                 
                 
-                me.input.bindKey(me.input.KEY.B, "buy");
-                me.input.bindKey(me.input.KEY.Q, "skill1");
-                me.input.bindKey(me.input.KEY.W, "skill2");
-                me.input.bindKey(me.input.KEY.E, "skill3");
+                me.input.bindKey(me.input.KEY.B, "buy"); // binds the b key to begin buying
+                me.input.bindKey(me.input.KEY.Q, "skill1"); // binds the q key to purchase skill 1
+                me.input.bindKey(me.input.KEY.W, "skill2"); // binds the w key to purchase skill 2
+                me.input.bindKey(me.input.KEY.E, "skill3"); // binds the e key to purchase skill 3
                 me.input.bindKey(me.input.KEY.RIGHT, "right"); // binds the right key to make the player go right
                 me.input.bindKey(me.input.KEY.LEFT, "left"); // binds the left key to make the player go left
                 me.input.bindKey(me.input.KEY.SPACE, "jump"); // binds the space key to make the player jump

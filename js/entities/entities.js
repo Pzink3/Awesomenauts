@@ -35,7 +35,7 @@ game.PlayerEntity = me.Entity.extend({
    },
    
    setFlags: function(){
-     this.facing = "right";
+     this.facing = "right"; // faces player to the right
      this.dead = false;
      this.attacking = false;
    },
@@ -48,9 +48,9 @@ game.PlayerEntity = me.Entity.extend({
    },
    
    setAttributes: function(){
- this.health = game.data.playerHealth;
- this.body.setVelocity(game.data.playerMoveSpeed, 20);
- this.attack = game.data.playerAttack;
+ this.health = game.data.playerHealth; // sets the player's health attribute
+ this.body.setVelocity(game.data.playerMoveSpeed, 20); // sets the player's velocity
+ this.attack = game.data.playerAttack; // sets the player's attacking attribute
    },
    
    setPlayerTimers: function(){
@@ -105,7 +105,7 @@ game.PlayerEntity = me.Entity.extend({
   
   moveLeft: function(){
         this.facing = "left";
-          this.body.vel.x -=this.body.accel.x * me.timer.tick;
+          this.body.vel.x -= this.body.accel.x * me.timer.tick;
           this.flipX(false);
   },
   
@@ -217,7 +217,7 @@ game.PlayerEntity = me.Entity.extend({
                   game.data.gold += 1; // increases gold
                   console.log("Current gold: " + game.data.gold); // logs in the gold console
                   }
-                response.b.loseHealth(game.data.playerAttack);
+                response.b.loseHealth(game.data.playerAttack); // loses a player's life when attacked
    }
 });
 
@@ -243,9 +243,9 @@ game.PlayerBaseEntity = me.Entity.extend({
         this.body.onCollision = this.onCollision.bind(this);      
         this.type = "PlayerBase"; // sets the name as PlayerBase
     
-    this.renderable.addAnimation("idle", [0]);
-    this.renderable.addAnimation("broken", [1]);
-    this.renderable.setCurrentAnimation("idle");
+    this.renderable.addAnimation("idle", [0]); // adds the idle animation
+    this.renderable.addAnimation("broken", [1]); // adds the broken animation
+    this.renderable.setCurrentAnimation("idle"); // sets the current animation as idle
     },
         
           loseHealth: function(damage){

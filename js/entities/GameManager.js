@@ -103,19 +103,19 @@ game.SpendGold = Object.extend({
        game.data.buyscreen.setOpacity(0.8);
        me.game.world.addChild(game.data.buyscreen, 34);
        game.data.player.body.setVelocity(0, 0);
-       me.input.bindKey(me.input.KEY.F1, "F1", true);
-       me.input.bindKey(me.input.KEY.F2, "F2", true);
-       me.input.bindKey(me.input.KEY.F3, "F3", true);
-       me.input.bindKey(me.input.KEY.F4, "F4", true);
-       me.input.bindKey(me.input.KEY.F5, "F5", true);
-       me.input.bindKey(me.input.KEY.F6, "F6", true);
+       me.input.bindKey(me.input.KEY.F1, "F1", true); // truly binds the f1 key
+       me.input.bindKey(me.input.KEY.F2, "F2", true); // truly binds the f2 key
+       me.input.bindKey(me.input.KEY.F3, "F3", true); // truly binds the f3 key
+       me.input.bindKey(me.input.KEY.F4, "F4", true); // truly binds the f4 key
+       me.input.bindKey(me.input.KEY.F5, "F5", true); // truly binds the f5 key
+       me.input.bindKey(me.input.KEY.F6, "F6", true); // truly binds the f6 key
        this.setBuyText();     
    },
    setBuyText: function(){
      game.data.buytext = new (me.Renderable.extend({
          init: function(){
              this._super(me.Renderable, 'init', [game.data.pausePos.x, game.data.pausePos.y, 300, 50]);
-             this.font = new me.Font("Aharoni", 26, "white");
+             this.font = new me.Font("Aharoni", 26, "white"); // sets the font to Aharoni along with its size as 26 and its color as white
              this.updateWhenPaused = true;
              this.alwaysUpdate = true;
          },       
@@ -168,6 +168,10 @@ game.SpendGold = Object.extend({
                         if(this.checkCost(5)){
                this.makePurchase(5);
            }
+           }else if(me.input.isKeyPressed("F6")){
+                        if(this.checkCost(6)){
+               this.makePurchase(6);
+           }
        }
    },
    checkCost: function(skill){
@@ -196,16 +200,16 @@ game.SpendGold = Object.extend({
        game.data.gold -= ((game.data.skill2 +2)* 10);
        game.data.skill2 += 2;
           }else if(skill ===3){
-              game.data.gold -= ((game.data.skill3 +1)* 10);
+              game.data.gold -= ((game.data.skill3 +3)* 10);
               game.data.skill3 += 3;
                  }else if(skill ===4){
-                     game.data.gold -= ((game.data.ability1 +1)* 10);
+                     game.data.gold -= ((game.data.ability1 +4)* 10);
                      game.data.ability1 += 1;
                         }else if(skill ===5){
-                            game.data.gold -= ((game.data.ability2 +1)* 10);
+                            game.data.gold -= ((game.data.ability2 +5)* 10);
                             game.data.ability2 += 2;
                                }else if(skill ===6){
-                             game.data.gold -= ((game.data.ability3 +1)* 10);
+                             game.data.gold -= ((game.data.ability3 +6)* 10);
                              game.data.ability3 += 3;
    }
    }
