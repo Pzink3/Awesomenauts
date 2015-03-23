@@ -12,6 +12,7 @@ game.SpendExp = me.ScreenObject.extend({
               me.input.bindKey(me.input.KEY.F5, "F5");
               me.input.bindKey(me.input.KEY.M, "M");
               me.audio.play("fnaf-3-menu-music", true);
+              var exploost = ((game.data.exp1 + 1) * 10);
               me.game.world.addChild(new (me.Renderable.extend({
                   init: function() {
                       this._super(me.Renderable, "init", [10, 10, 300, 50]);
