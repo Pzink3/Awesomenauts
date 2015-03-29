@@ -10,7 +10,7 @@ game.EnemyCreep = me.Entity.extend({
                 return (new me.Rect(0, 0, 32, 64)).toPolygon();
             }
         }]);
-    this.health = 10; // gives the enemy creep only 10 lives.
+    this.health = game.data.enemyCreepHealth; // gives the enemy creep only 10 lives.
     this.alwaysUpdate = true;
     //this.attacking lets us know if the enemy is currently attacking
     this.attacking = false; // tells the enemy creep to not attack
@@ -30,7 +30,7 @@ game.EnemyCreep = me.Entity.extend({
     loseHealth: function(damage) {
       this.health = this.health - damage;
     },
-    update: function(delta){       
+    update: function(delta){     
         console.log(this.health);
         if(this.health <= 0){
             me.game.world.removeChild(this);
@@ -51,29 +51,54 @@ game.EnemyCreep = me.Entity.extend({
     },
     
     collideHandler: function(response){
-        if(response.b.type==='EnemyBaseEntity'){
+        if(response.b.type==='PlayerBaseEntity'){
+            this.attacking = true;
+            this.body.vel.x = 0;
+            this.pos.x = this.pos.x + 1;
+            if((this.now))
             var ydif = this.pos.y - response.b.pos.y;
             var xdif = this.pos.x - response.b.pos.x;
-            this.attacking = true;
-            //this.lastAttacking = this.now;
-            this.body.vel.x = 0;
-            this.pos.x = this.pos.x + 1;
-            if((this.now-this.lastHit >= 1000)){
+          
+          if(ydif<-40 && xdif< 70 && xdif>-35) {
+              this.body.falling = false;
+              this.body.vel.y = -1;
+          }
+          else if(xdif>-35 && this.facing==='right' && (xdif<0)){
+              this.body.vel.x = 0;
+              this.pos.x = this.pos.x +1;
+          }
+           else if(xdif>-35 && this.facing==='left' && (xdif>0)){
+              this.body.vel.x = 0;
+              this.pos.x = this.pos.x +1;
+          }
+          if(this.renderable.isCurrentAnimation("attack") && this.now-this.lastHit >= 1000){
+              console.log("tower Hit");
+              this.lastHit = this.now;
+              response.b.loseHealth();
+          }
+          
+      }else if(response.b.type==='EnemyCreep'){
+          var xdif = this.pos.x - response.b.pos.x;
+          var ydif = this.pos.y - response.b.pos.y;
+          
+          if (xdif>0){
+              this.pos.x = this.pos.x + 1;
+              if(this.facing==='left'){
+                  this.body.vel.x = 0;
+              }
+          }else{
+              this.pos.x = this.pos.x - 1;
+              if(this.facing==='right'){
+                  this.vel.x = 0;
+              }
+          }
+          if(this.renderable.isCurrentAnimation("attack") && this.now-this.lastHit >= 1000
+              && (Math.abs(ydif) <=40) && (xdif>0) && this.facing==='left' || (xdif<0) && this.facing==='right'){
                 this.lastHit = this.now;
                 response.b.loseHealth(1);
-            }
-        }else if(response.b.type==='PlayerEntity'){
-            var xdif = this.pos.x - response.b.pos.x;
-            this.attacking = true;
-           // this.lastAttacking = this.now;
-            this.body.vel.x = 0;
-            if(xdif>0){
-            this.pos.x = this.pos.x + 1;
-        }
-            if((this.now-this.lastHit >= 1000) && xdif>0){
-                this.lastHit = this.now;
-                response.b.loseHealth(1);
-        }
-    }
-}
+              
+          }
+      }
+          }
 });
+

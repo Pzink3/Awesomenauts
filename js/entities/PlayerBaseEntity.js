@@ -11,14 +11,14 @@ game.PlayerBaseEntity = me.Entity.extend({
             }
             }]);
         this.broken = false; // tells the player base entity to not break
-        this.health = 10; // sets the health to 10
+        this.health = game.data.playerBaseHealth; // sets the health to 10
         this.alwaysUpdate = true; // tells the player base entity to always update
         this.body.onCollision = this.onCollision.bind(this);      
-        this.type = "PlayerBase"; // sets the name as PlayerBase
+        this.type = "PlayerBaseEntity"; // sets the name as PlayerBase
     
-    this.renderable.addAnimation("idle", [0]);
-    this.renderable.addAnimation("broken", [1]);
-    this.renderable.setCurrentAnimation("idle");
+    this.renderable.addAnimation("idle", [0]); // adds the idle animation
+    this.renderable.addAnimation("broken", [1]); // adds the broken animation
+    this.renderable.setCurrentAnimation("idle"); // sets the current animation as idle
     },
         
           loseHealth: function(damage){
@@ -32,8 +32,6 @@ game.PlayerBaseEntity = me.Entity.extend({
     update:function(delta){
         if(this.health<=0){
             this.broken = true;
-            game.data.win = false;
-            this.renderable.setCurrentAnimation("broken");
         }
         this.body.update(delta);
         
@@ -43,7 +41,3 @@ game.PlayerBaseEntity = me.Entity.extend({
     }
   
 });
-
-
-
-

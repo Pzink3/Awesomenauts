@@ -8,8 +8,8 @@ game.PlayScreen = me.ScreenObject.extend({
 
                 
                 me.levelDirector.loadLevel("level01"); // calls the level director to load level
-
-                me.audio.playTrack("the-incredits"); // plays the song, "The Incredits"
+                me.audio.play("startup"); // plays the startup sound effect
+         //       me.audio.playTrack("the-incredits"); // plays the song, "The Incredits"
                 
                 this.resetPlayer(0, 420); // resets player
                 
@@ -20,15 +20,14 @@ game.PlayScreen = me.ScreenObject.extend({
                 
                 var heroDeathManager = me.pool.pull("HeroDeathManager", 0, 0, {}); // pulls the hero death manager
                 me.game.world.addChild(heroDeathManager, 0); // adds the hero death manager
-                
-                var player = me.pool.pull("player", 0, 420, {});
-                me.game.world.addChild(player, 5); // adds the player
-                
+       
                 var experienceManager = me.pool.pull("ExperienceManager", 0, 0, {}); // pulls the experience manager
                 me.game.world.addChild(experienceManager, 0); // adds the hero death manager
                  
                 var spendGold = me.pool.pull("SpendGold", 0, 0, {}); // pulls the spend gold class
                 me.game.world.addChild(spendGold, 0); // adds the hero death manager
+                
+               
                 
                 
                 me.input.bindKey(me.input.KEY.B, "buy"); // binds the b key to begin buying
